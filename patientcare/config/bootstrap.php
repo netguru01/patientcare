@@ -12,6 +12,7 @@
  * @since         0.10.8
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+ 
 
 // You can remove this if you are confident that your PHP version is sufficient.
 if (version_compare(PHP_VERSION, '5.5.9') < 0) {
@@ -206,8 +207,9 @@ Type::build('datetime')
 
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system
-if (Configure::read('debug')) {
-    Plugin::load('DebugKit', ['bootstrap' => true]);
-}
+// if (Configure::read('debug')) {
+//     Plugin::load('DebugKit', ['bootstrap' => true]);
+// }
 
 Plugin::load('Migrations');
+Plugin::loadAll();
